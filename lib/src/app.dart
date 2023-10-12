@@ -1,66 +1,95 @@
+import 'package:first_project_flutter/src/widgets/article_item.dart';
+import 'package:first_project_flutter/src/widgets/tag.dart';
+import 'package:first_project_flutter/src/widgets/time_read.dart';
 import 'package:flutter/material.dart';
 import 'package:first_project_flutter/src/widgets/project_image.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 50),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.only(bottom: 18),
-            child: const Text(
+            margin: EdgeInsets.only(bottom: 18),
+            child: Text(
               "Today's Article",
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 20,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w800,
               ),
             ),
           ),
-          const ProjectImage(),
-          Container(
-            margin: const EdgeInsets.only(top: 15),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.grey.shade300,
-            ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Text(
-                'Design',
-                textDirection: TextDirection.ltr,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black87,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
+          ProjectImage(
+            width: double.infinity,
+            height: 260,
+            path: 'assets/images/Placeholder-1.jpg',
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+          TagArticle(
+            name: 'Design',
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
             child: Text(
               'How to get started as a mobile app designer and get your first client',
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 17.5,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w800,
               ),
             ),
           ),
-          const Text(
-            'Octuber, 4, 2021 • 3 min read',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w800,
+          TimeRead(
+            date: 'October, 4, 2021',
+            time: 1800,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 35),
+            child: Divider(),
+          ),
+          Padding(
+            padding: EdgeInsets.zero,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'More Articles',
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                Text(
+                  'See All',
+                  style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black54),
+                ),
+              ],
             ),
           ),
-          // Texto
+          ArticleItem(
+            path: 'assets/images/Placeholder-2.jpg',
+            title: 'Make A Successful Instagram',
+            date: 'October, 4, 2021',
+            time: 180,
+            likeCount: 14,
+          ),
+          ArticleItem(
+            path: 'assets/images/Placeholder-3.jpg',
+            title: 'Get Started In 3D Animation',
+            date: 'October, 4, 2021',
+            time: 1231231,
+            likeCount: 72,
+          ),
         ],
-      ),
+      ), // Texto
     );
   }
 }
