@@ -54,6 +54,7 @@ class TimeRead extends StatelessWidget {
       style: GoogleFonts.poppins(
         fontSize: 12,
         fontWeight: FontWeight.w600,
+        color: Colors.black,
       ),
     );
   }

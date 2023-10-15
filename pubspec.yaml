@@ -63,7 +63,7 @@ flutter:
     - assets/images/Placeholder-1.jpg
     - assets/images/Placeholder-2.jpg
     - assets/images/Placeholder-3.jpg
-  #   - images/a_dot_ham.jpeg
+    - assets/images/User.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

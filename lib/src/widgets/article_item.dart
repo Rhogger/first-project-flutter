@@ -1,3 +1,4 @@
+import 'package:first_project_flutter/src/pages/article_details.dart';
 import 'package:first_project_flutter/src/widgets/project_image.dart';
 import 'package:first_project_flutter/src/widgets/time_read.dart';
 import 'package:flutter/material.dart';
@@ -34,28 +35,54 @@ class ArticleItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          ProjectImage(
-            width: 110,
-            height: 75,
-            path: path,
-          ),
-          Container(
-            width: 220,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w800,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.transparent,
+              shadowColor: Colors.transparent,
+              padding: EdgeInsets.all(0),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ArticleDetails();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              width: 340,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ProjectImage(
+                    width: 110,
+                    height: 75,
+                    path: path,
                   ),
-                ),
-                TimeRead(
-                  date: date,
-                  time: time,
-                ),
-              ],
+                  Container(
+                    width: 220,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.black,
+                          ),
+                        ),
+                        TimeRead(
+                          date: date,
+                          time: time,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(
